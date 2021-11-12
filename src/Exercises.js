@@ -8,7 +8,7 @@ export function Exercises() {
     const Word = Parse.Object.extend("Word");
     const query = new Parse.Query(Word);
 
-    const words = query.find().then((words) => {
+    query.find().then((words) => {
       console.log(words);
       const randomWord = words[Math.floor(Math.random() * words.length)];
       console.log(randomWord.get("word"));

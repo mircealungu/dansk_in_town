@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Parse from "parse";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 
 export function Upload() {
   const [word, setWord] = useState();
@@ -21,7 +21,7 @@ export function Upload() {
     newWord.set("user", Parse.User.current());
     try {
       const newWordReference = await newWord.save();
-      alert("succes");
+      alert("succes: " + newWordReference);
     } catch (error) {
       alert(error);
     }
