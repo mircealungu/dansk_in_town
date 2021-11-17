@@ -2,26 +2,31 @@ import { useEffect, useState } from "react";
 import Parse from "parse";
 
 export function Exercises() {
-  const [word, setWord] = useState();
+  const [translation, setTranslation] = useState();
 
   useEffect(() => {
-    const Word = Parse.Object.extend("Word");
-    const query = new Parse.Query(Word);
+    const Translation = Parse.Object.extend("Translation");
+    const query = new Parse.Query(Translation);
 
-    query.find().then((words) => {
-      console.log(words);
-      const randomWord = words[Math.floor(Math.random() * words.length)];
-      console.log(randomWord.get("word"));
-      console.log(randomWord.get("translation"));
-      setWord(randomWord);
+    console.log("before the find");
+    query.find().then((translations) => {
+      console.log(translations);
+      const randomWord =
+        translations[Math.floor(Math.random() * translations.length)];
+      console.log(randomWord.get("from"));
+      console.log(randomWord.get("to"));
+      setTranslation(randomWord);
     });
   }, []);
 
+  if (!translation) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <>
-      Let's practice some Danish!
       <h1>
-        Do youp know the meaning of <b>{word.get("word")}</b>?{" "}
+        <b>{translation.get("from")}</b> = ?{" "}
       </h1>
     </>
   );

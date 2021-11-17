@@ -5,10 +5,10 @@ export function NavigationBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Dansk in Town</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" activeKey={window.location.pathname}>
             {!Parse.User.current() && (
               <>
                 <Nav.Link href="/signup">Sign Up</Nav.Link>
