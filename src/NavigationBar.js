@@ -18,6 +18,7 @@ export function NavigationBar() {
 
             {Parse.User.current() && (
               <>
+                <Nav.Link href="/myimages">My Images</Nav.Link>
                 <Nav.Link href="/upload">Upload</Nav.Link>
                 <Nav.Link href="/exercises">Exercises</Nav.Link>
               </>

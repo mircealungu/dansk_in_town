@@ -1,20 +1,14 @@
 import { useEffect, useState } from "react";
-import Parse from "parse";
+
+import { getTranslations } from "./db/db";
 
 export function Exercises() {
   const [translation, setTranslation] = useState();
 
   useEffect(() => {
-    const Translation = Parse.Object.extend("Translation");
-    const query = new Parse.Query(Translation);
-
-    console.log("before the find");
-    query.find().then((translations) => {
-      console.log(translations);
+    getTranslations().then((translations) => {
       const randomWord =
         translations[Math.floor(Math.random() * translations.length)];
-      console.log(randomWord.get("from"));
-      console.log(randomWord.get("to"));
       setTranslation(randomWord);
     });
   }, []);
@@ -26,6 +20,10 @@ export function Exercises() {
   return (
     <>
       <h1>
+        <img
+          style={{ maxWidth: "100%" }}
+          src={translation.get("image").get("file").url()}
+        />
         <b>{translation.get("from")}</b> = ?{" "}
       </h1>
     </>
