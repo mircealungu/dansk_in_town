@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import Parse from "parse";
 import { useNavigate } from "react-router";
 
 import Translation from "./Translation";
+import { uploadImageAndWords } from "./db/db";
 
 function generateUID() {
   return Date.now().toString(36) + Math.random().toString(36).substring(2);
@@ -19,28 +19,7 @@ export function Upload() {
   async function handleUpload(e) {
     e.preventDefault();
 
-    const Image = Parse.Object.extend("Image");
-    const newImage = new Image();
-
-    const file = new Parse.File(imageFile.name, imageFile);
-    newImage.set("file", file);
-
-    await Promise.all(
-      translations.map((translation) => {
-        const Translation = Parse.Object.extend("Translation");
-        const newTranslation = new Translation();
-        newTranslation.set("from", translation.from);
-        newTranslation.set("to", translation.to);
-        newTranslation.set("user", Parse.User.current());
-        newTranslation.set("image", newImage);
-
-        try {
-          return newTranslation.save();
-        } catch (error) {
-          alert(error);
-        }
-      })
-    );
+    await uploadImageAndWords(imageFile, translations);
 
     navigate("/myimages");
   }
