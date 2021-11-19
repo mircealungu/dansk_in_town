@@ -12,8 +12,12 @@ export function NavigationBar() {
           <Nav className="me-auto" activeKey={window.location.pathname}>
             {!Parse.User.current() && (
               <>
-                <Nav.Link href="/signup">Sign Up</Nav.Link>
-                <Nav.Link href="/login">LogIn</Nav.Link>
+                <Nav.Link as={Link} href="/signup">
+                  Sign Up
+                </Nav.Link>
+                <Nav.Link as={Link} href="/login">
+                  LogIn
+                </Nav.Link>
               </>
             )}
 
