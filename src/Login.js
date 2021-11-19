@@ -30,11 +30,11 @@ export default function Login() {
       <br />
       <Form>
         <Form.Group className="mb-3" controlId="formBasicUsername">
-          <Form.Label>Username address</Form.Label>
+          <Form.Label>Username</Form.Label>
           <Form.Control
             type="text"
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter username"
+            placeholder="Username"
           />
         </Form.Group>
 

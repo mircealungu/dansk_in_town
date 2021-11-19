@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import { PreviewImage } from "./MyImages.sc";
 import { getTranslations } from "./db/db.js";
+import { Parse } from "parse";
+import { useNavigate } from "react-router-dom";
 
 export function MyImages() {
   const [imagesAndTranslations, setImagesAndTranslations] = useState();
   const [imageId2Url, setImageId2Url] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const _imagesAndTranslations = {};
     const _imageId2Url = {};
-    // dict mapping from image.id => [list of translations associated with that image]
 
     getTranslations().then((translations) => {
       translations.map((t) => {
@@ -28,6 +30,10 @@ export function MyImages() {
       setImageId2Url(_imageId2Url);
     });
   }, []);
+
+  if (!Parse.User.current()) {
+    navigate("/login");
+  }
 
   if (!imagesAndTranslations || !imageId2Url) {
     return "Loading...";

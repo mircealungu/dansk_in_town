@@ -1,10 +1,19 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Parse from "parse";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export function NavigationBar() {
+  const navigate = useNavigate();
+
+  function handleSignOut(e) {
+    e.preventDefault();
+    Parse.User.logOut().then(() => {
+      navigate("/");
+    });
+  }
+
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="sm">
       <Container>
         <Navbar.Brand href="#home">Dansk in Town</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -31,6 +40,10 @@ export function NavigationBar() {
                 </Nav.Link>
                 <Nav.Link as={Link} to="/exercises">
                   Exercises
+                </Nav.Link>
+
+                <Nav.Link onClick={handleSignOut} as={Link} to="/">
+                  Sign Out
                 </Nav.Link>
               </>
             )}
