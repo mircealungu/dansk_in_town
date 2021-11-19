@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/dansk_in_town/static/css/main.dbfda1d7.chunk.css",
-    "main.js": "/dansk_in_town/static/js/main.f35bff3e.chunk.js",
-    "main.js.map": "/dansk_in_town/static/js/main.f35bff3e.chunk.js.map",
+    "main.js": "/dansk_in_town/static/js/main.f890c210.chunk.js",
+    "main.js.map": "/dansk_in_town/static/js/main.f890c210.chunk.js.map",
     "runtime-main.js": "/dansk_in_town/static/js/runtime-main.91482b0d.js",
     "runtime-main.js.map": "/dansk_in_town/static/js/runtime-main.91482b0d.js.map",
     "static/css/2.383c0125.chunk.css": "/dansk_in_town/static/css/2.383c0125.chunk.css",
-    "static/js/2.f8e5e4f8.chunk.js": "/dansk_in_town/static/js/2.f8e5e4f8.chunk.js",
-    "static/js/2.f8e5e4f8.chunk.js.map": "/dansk_in_town/static/js/2.f8e5e4f8.chunk.js.map",
+    "static/js/2.2f991ce4.chunk.js": "/dansk_in_town/static/js/2.2f991ce4.chunk.js",
+    "static/js/2.2f991ce4.chunk.js.map": "/dansk_in_town/static/js/2.2f991ce4.chunk.js.map",
     "static/js/3.caa321d3.chunk.js": "/dansk_in_town/static/js/3.caa321d3.chunk.js",
     "static/js/3.caa321d3.chunk.js.map": "/dansk_in_town/static/js/3.caa321d3.chunk.js.map",
     "index.html": "/dansk_in_town/index.html",
     "static/css/2.383c0125.chunk.css.map": "/dansk_in_town/static/css/2.383c0125.chunk.css.map",
     "static/css/main.dbfda1d7.chunk.css.map": "/dansk_in_town/static/css/main.dbfda1d7.chunk.css.map",
-    "static/js/2.f8e5e4f8.chunk.js.LICENSE.txt": "/dansk_in_town/static/js/2.f8e5e4f8.chunk.js.LICENSE.txt"
+    "static/js/2.2f991ce4.chunk.js.LICENSE.txt": "/dansk_in_town/static/js/2.2f991ce4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.91482b0d.js",
     "static/css/2.383c0125.chunk.css",
-    "static/js/2.f8e5e4f8.chunk.js",
+    "static/js/2.2f991ce4.chunk.js",
     "static/css/main.dbfda1d7.chunk.css",
-    "static/js/main.f35bff3e.chunk.js"
+    "static/js/main.f890c210.chunk.js"
   ]
 }
