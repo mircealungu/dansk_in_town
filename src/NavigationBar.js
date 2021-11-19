@@ -1,5 +1,6 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Parse from "parse";
+import { Link } from "react-router-dom";
 
 export function NavigationBar() {
   return (
@@ -18,9 +19,15 @@ export function NavigationBar() {
 
             {Parse.User.current() && (
               <>
-                <Nav.Link href="/myimages">My Images</Nav.Link>
-                <Nav.Link href="/upload">Upload</Nav.Link>
-                <Nav.Link href="/exercises">Exercises</Nav.Link>
+                <Nav.Link as={Link} to="/myimages">
+                  My Images
+                </Nav.Link>
+                <Nav.Link as={Link} to="/upload">
+                  Upload
+                </Nav.Link>
+                <Nav.Link as={Link} to="/exercises">
+                  Exercises
+                </Nav.Link>
               </>
             )}
           </Nav>
