@@ -13,7 +13,7 @@ export default function LandingPage() {
     <>
       <h2>
         <br /> <br />
-        Don't be like Homer Simpson!
+        Don't be like Homer Simpson ;)
       </h2>
 
       <img src={simpsonsImage} width="100%" />
