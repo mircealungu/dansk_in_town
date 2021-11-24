@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { PreviewImage } from "./MyImages.sc";
 import { getTranslations } from "./db/db.js";
 import { Parse } from "parse";
 import { useNavigate } from "react-router-dom";
+import { Button, Row, Col } from "react-bootstrap";
+
+import ImageCard from "./ImageCard";
 
 export function MyImages() {
   const [imagesAndTranslations, setImagesAndTranslations] = useState();
@@ -44,19 +46,25 @@ export function MyImages() {
 
   return (
     <>
-      My translations oragnized by images are
-      {imageIds.map((imageId) => (
-        <>
-          <PreviewImage src={imageId2Url[imageId]} />
-          <ul>
-            {imagesAndTranslations[imageId].map((e) => (
-              <li>
-                {e.get("from")} = {e.get("to")}
-              </li>
-            ))}
-          </ul>
-        </>
-      ))}
+      <div style={{ display: "flex" }}>
+        <Button style={{ marginLeft: "auto" }} href="/upload">
+          Upload New Image
+        </Button>
+      </div>
+
+      <Row xs={1} md={2}>
+        {imageIds.map((imageId) => (
+          <Col key={imageId}>
+            {console.log(imagesAndTranslations[imageId])}
+
+            <ImageCard
+              imageId={imageId}
+              url={imageId2Url[imageId]}
+              words={imagesAndTranslations[imageId]}
+            />
+          </Col>
+        ))}
+      </Row>
     </>
   );
 }
