@@ -16,7 +16,7 @@ export default function LandingPage() {
         Don't be like Homer Simpson ;)
       </h2>
 
-      <img src={simpsonsImage} width="100%" />
+      <img alt="simpsons" src={simpsonsImage} width="100%" />
       <br />
       <br />
       <p>Understand the danish on the signs you see around you in town!</p>

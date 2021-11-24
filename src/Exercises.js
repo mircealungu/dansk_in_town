@@ -21,6 +21,7 @@ export function Exercises() {
     <>
       <h1>
         <img
+          alt=""
           style={{ maxWidth: "100%" }}
           src={translation.get("image").get("file").url()}
         />

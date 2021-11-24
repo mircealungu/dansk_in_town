@@ -28,6 +28,7 @@ async function uploadImageAndWords(imageFile, translations) {
         return newTranslation.save();
       } catch (error) {
         alert(error);
+        return Promise.reject("something went wrong");
       }
     })
   );

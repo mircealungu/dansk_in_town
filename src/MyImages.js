@@ -16,7 +16,7 @@ export function MyImages() {
     const _imageId2Url = {};
 
     getTranslations().then((translations) => {
-      translations.map((t) => {
+      translations.forEach((t) => {
         const imageId = t.get("image").id;
         const imageURL = t.get("image").get("file").url();
 

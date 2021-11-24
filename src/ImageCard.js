@@ -12,7 +12,8 @@ export default function ImageCard({ imageId, url, words }) {
         <ListGroup className="list-group-flush">
           {words.map((e) => (
             <ListGroupItem key={e.id}>
-              <b>{e.get("from")}</b> = {e.get("to")}
+              <b>{e.get("from")}</b>
+              {/* = {e.get("to")} */}
             </ListGroupItem>
           ))}
         </ListGroup>

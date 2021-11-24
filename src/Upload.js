@@ -34,7 +34,7 @@ export function Upload() {
 
   function setFrom(translation, newValue) {
     const updatedList = translations.map((t) =>
-      t.id != translation.id
+      t.id !== translation.id
         ? t
         : { id: translation.id, from: newValue, to: translation.to }
     );
@@ -44,7 +44,7 @@ export function Upload() {
 
   function setTo(translation, newValue) {
     const updatedList = translations.map((t) =>
-      t.id != translation.id
+      t.id !== translation.id
         ? t
         : { id: translation.id, from: translation.from, to: newValue }
     );
@@ -52,13 +52,14 @@ export function Upload() {
   }
 
   function deleteTranslation(translation) {
-    setTranslations(translations.filter((t) => t.id != translation.id));
+    setTranslations(translations.filter((t) => t.id !== translation.id));
   }
 
   return (
     <>
       {imageFile && (
         <img
+          alt=""
           style={{ maxWidth: "400px" }}
           src={URL.createObjectURL(imageFile)}
         />
