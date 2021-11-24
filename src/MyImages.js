@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getTranslations } from "./db/db.js";
 import { Parse } from "parse";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Button, Row, Col } from "react-bootstrap";
 
 import ImageCard from "./ImageCard";
@@ -47,9 +47,9 @@ export function MyImages() {
   return (
     <>
       <div style={{ display: "flex" }}>
-        <Button style={{ marginLeft: "auto" }} href="/upload">
-          Upload New Image
-        </Button>
+        <Link to="/upload">
+          <Button style={{ marginLeft: "auto" }}>Upload New Image</Button>
+        </Link>
       </div>
 
       <Row xs={1} md={2}>
