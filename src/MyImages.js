@@ -55,8 +55,6 @@ export function MyImages() {
       <Row xs={1} md={2}>
         {imageIds.map((imageId) => (
           <Col key={imageId}>
-            {console.log(imagesAndTranslations[imageId])}
-
             <ImageCard
               imageId={imageId}
               url={imageId2Url[imageId]}
