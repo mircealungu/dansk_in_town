@@ -68,7 +68,7 @@ export default function SignUp() {
         />
       </Form.Group>
 
-      <Button variabt="primary" onClick={createAccount}>
+      <Button variant="primary" onClick={createAccount}>
         Create Account
       </Button>
     </>
