@@ -1,15 +1,21 @@
 import { Form, Button } from "react-bootstrap";
 import { NarrowSpace } from "./Upload.sc";
+import Parse from "parse";
+
 export default function Translation({
   translation,
   setFrom,
   setTo,
   deleteTranslation,
 }) {
-  console.log(translation.id);
-  console.log(translation.from);
-  console.log(translation.to);
+  async function automaticTranslation(e) {
+    e.preventDefault();
 
+    let result = await Parse.Cloud.run("google_translate", {
+      word_to_translate: translation.from,
+    });
+    setTo(translation, result);
+  }
   return (
     <>
       <div style={{ display: "flex" }}>
@@ -27,8 +33,12 @@ export default function Translation({
 
         <Form.Group className="mb-3" controlId="formBasicTranslation">
           <Form.Label>Translation</Form.Label>
+          <a href="/" onClick={automaticTranslation}>
+            (auto)
+          </a>
           <Form.Control
             type="text"
+            value={translation.to}
             onChange={(e) => setTo(translation, e.target.value)}
           />
         </Form.Group>
