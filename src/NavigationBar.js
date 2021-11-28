@@ -15,7 +15,10 @@ export function NavigationBar() {
   return (
     <Navbar bg="light" expand="sm">
       <Container>
-        <Navbar.Brand href="#home">Dansk in Town</Navbar.Brand>
+        <Navbar.Brand href="#/about" style={{ lineHeight: "1em" }}>
+          Dansk <br />
+          in Town
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" activeKey={window.location.pathname}>
@@ -35,11 +38,9 @@ export function NavigationBar() {
                 <Nav.Link as={Link} to="/myimages">
                   My Images
                 </Nav.Link>
-                <Nav.Link as={Link} to="/upload">
-                  Upload
-                </Nav.Link>
-                <Nav.Link as={Link} to="/exercises">
-                  Exercises
+
+                <Nav.Link as={Link} to="/exercise">
+                  Exercise
                 </Nav.Link>
 
                 <Nav.Link onClick={handleSignOut} as={Link} to="/">

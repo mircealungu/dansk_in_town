@@ -1,14 +1,6 @@
-import Parse from "parse";
-import { useNavigate } from "react-router-dom";
-import simpsonsImage from "./img/simpsons.png";
+import simpsonsImage from "../img/simpsons.png";
 
-export default function LandingPage() {
-  const navigate = useNavigate();
-
-  if (Parse.User.current()) {
-    navigate("/exercises");
-  }
-
+export default function AboutPage() {
   return (
     <>
       <h2>

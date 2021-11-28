@@ -3,31 +3,25 @@ import { Form, Button } from "react-bootstrap";
 import Parse from "parse";
 import { useNavigate } from "react-router";
 
-export default function Login() {
+export default function Login(props) {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
   function handleLoginAttempt(e) {
     e.preventDefault();
-    console.log("prevented default");
-
-    console.log(username);
-    console.log(password);
 
     const user = new Parse.User();
     user.setPassword(password);
     user.setUsername(username);
     user.logIn().then((loggedInUser) => {
-      console.log(loggedInUser);
-      navigate("/exercises");
+      navigate("/exercise");
     });
   }
 
   return (
     <>
-      <br />
-      <br />
+      <h1>Login</h1>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
@@ -35,6 +29,7 @@ export default function Login() {
             type="text"
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
+            autoFocus
           />
         </Form.Group>
 

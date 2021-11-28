@@ -20,7 +20,7 @@ export default function SignUp() {
     } catch (error) {
       alert("Error: " + error.message);
     }
-    navigate("/exercises");
+    navigate("/exercise");
   }
 
   function usernameChange(e) {
@@ -37,9 +37,6 @@ export default function SignUp() {
   return (
     <>
       <h1>Sign Up</h1>
-      <br />
-      <br />
-      <br />
 
       <Form.Group className="mb-3" controlId="formBasicUsrname">
         <Form.Label>Username</Form.Label>
@@ -47,6 +44,7 @@ export default function SignUp() {
           onChange={usernameChange}
           type="text"
           placeholder="Enter username"
+          autoFocus
         />
       </Form.Group>
 

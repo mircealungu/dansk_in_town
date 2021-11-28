@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
 import Translation from "./Translation";
-import { uploadImageAndWords } from "./db/db";
+import { uploadImageAndWords } from "../../db/db";
 
 function generateUID() {
   return Date.now().toString(36) + Math.random().toString(36).substring(2);

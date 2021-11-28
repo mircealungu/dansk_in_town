@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getTranslations } from "./db/db";
+import { getTranslations } from "../db/db";
 
 import { Button } from "react-bootstrap";
 

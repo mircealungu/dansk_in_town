@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
-import { getTranslations } from "./db/db.js";
-import { Parse } from "parse";
-import { useNavigate, Link } from "react-router-dom";
+import { getTranslations } from "../db/db.js";
+import { Link } from "react-router-dom";
 import { Button, Row, Col } from "react-bootstrap";
 
-import ImageCard from "./ImageCard";
+import ImageCard from "../components/ImageCard";
 
 export function MyImages() {
   const [imagesAndTranslations, setImagesAndTranslations] = useState();
   const [imageId2Url, setImageId2Url] = useState();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const _imagesAndTranslations = {};
@@ -32,10 +30,6 @@ export function MyImages() {
       setImageId2Url(_imageId2Url);
     });
   }, []);
-
-  if (!Parse.User.current()) {
-    navigate("/login");
-  }
 
   if (!imagesAndTranslations || !imageId2Url) {
     return "Loading...";
