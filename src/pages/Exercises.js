@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getTranslations } from "../db/db";
 
 import { Button } from "react-bootstrap";
+import * as s from "./Excercises.sc";
 
 export function Exercises() {
   const [translation, setTranslation] = useState();
@@ -22,35 +23,38 @@ export function Exercises() {
 
   return (
     <>
-      <h1>
-        <img
-          alt=""
-          style={{ maxWidth: "100%", maxHeight: "320px" }}
-          src={translation.get("image").get("file").url()}
-        />
-        <br />
-        <b>{translation.get("from")}</b> ={" "}
-        {showingSolution ? translation.get("to") : "?"}
-      </h1>
+      <s.ImageHolder>
+        <s.Image alt="" src={translation.get("image").get("file").url()} />
+      </s.ImageHolder>
 
-      {showingSolution ? (
-        <>
-          <Button onClick={() => window.location.reload(false)}>Next</Button>
-        </>
-      ) : (
-        <div style={{ align: "center" }}>
-          <Button
-            onClick={() => window.location.reload(false)}
-            variant="secondary"
-          >
-            Too Easy
-          </Button>
-          &nbsp;
-          <Button onClick={() => setShowingSolution(true)}>
-            Show Solution
-          </Button>
-        </div>
-      )}
+      <s.WordsHolder>
+        <b>{translation.get("from")}&nbsp; </b> ={" "}
+        {showingSolution ? translation.get("to") : "?"}
+      </s.WordsHolder>
+
+      <s.ButtonsHolder>
+        {showingSolution ? (
+          <>
+            <Button onClick={() => window.location.reload(false)}>Next</Button>
+          </>
+        ) : (
+          <div style={{ align: "center" }}>
+            <Button
+              onClick={() => window.location.reload(false)}
+              variant="secondary"
+            >
+              Too Easy
+            </Button>
+            &nbsp;&nbsp;&nbsp;
+            <Button
+              style={{ marginRight: "0" }}
+              onClick={() => setShowingSolution(true)}
+            >
+              Show Solution
+            </Button>
+          </div>
+        )}
+      </s.ButtonsHolder>
     </>
   );
 }
