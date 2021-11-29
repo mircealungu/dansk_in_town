@@ -1,11 +1,30 @@
-import Parse from "parse";
+import Parse, { User } from "parse";
 
 async function getTranslations() {
   const Translation = Parse.Object.extend("Translation");
   const query = new Parse.Query(Translation);
   query.include("image");
 
+  query.notContainedIn("too_easy", [User.current()]);
+
   return await query.find();
+}
+
+async function getTranslationsForExercises() {
+  const Translation = Parse.Object.extend("Translation");
+  const query = new Parse.Query(Translation);
+  query.include("image");
+
+  query.notContainedIn("too_easy", [User.current()]);
+
+  return await query.find();
+}
+
+async function tooEasy(translation) {
+  const current_too_easy = translation.get("too_easy") || [];
+  current_too_easy.push(User.current());
+  translation.set("too_easy", current_too_easy);
+  translation.save();
 }
 
 async function uploadImageAndWords(imageFile, translations) {
@@ -34,4 +53,9 @@ async function uploadImageAndWords(imageFile, translations) {
   );
 }
 
-export { getTranslations, uploadImageAndWords };
+export {
+  getTranslations,
+  uploadImageAndWords,
+  tooEasy,
+  getTranslationsForExercises,
+};

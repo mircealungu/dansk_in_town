@@ -10,13 +10,14 @@ const Image = styled.img`
   max-width: 100%;
   max-height: 320px;
   border: 1px solid gray;
+  margin-bottom: 1em;
 `;
 
 const WordsHolder = styled.div`
   display: flex;
   justify-content: center;
   font-size: xx-large;
-  margin-top: 1em;
+  margin-top: 0.2em;
 `;
 
 const ButtonsHolder = styled.div`

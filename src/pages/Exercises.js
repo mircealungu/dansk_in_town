@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getTranslations } from "../db/db";
+import { getTranslationsForExercises, tooEasy } from "../db/db";
 
 import { Button } from "react-bootstrap";
 import * as s from "./Excercises.sc";
@@ -10,15 +10,34 @@ export function Exercises() {
   const [showingSolution, setShowingSolution] = useState(false);
 
   useEffect(() => {
-    getTranslations().then((translations) => {
+    getRandomTranslation();
+  }, []);
+
+  function getRandomTranslation() {
+    setTranslation();
+    getTranslationsForExercises().then((translations) => {
       const randomWord =
         translations[Math.floor(Math.random() * translations.length)];
       setTranslation(randomWord);
     });
-  }, []);
+  }
+
+  function handleTooEasy() {
+    tooEasy(translation).then(() => {
+      console.log("saved");
+
+      getRandomTranslation();
+      // window.location.reload(false);
+    });
+  }
+
+  function handleNext() {
+    setShowingSolution(false);
+    getRandomTranslation();
+  }
 
   if (!translation) {
-    return <p>Loading...</p>;
+    return <p></p>;
   }
 
   return (
@@ -28,21 +47,20 @@ export function Exercises() {
       </s.ImageHolder>
 
       <s.WordsHolder>
-        <b>{translation.get("from")}&nbsp; </b> ={" "}
+        <b>{translation.get("from")} </b>
+      </s.WordsHolder>
+      <s.WordsHolder>
         {showingSolution ? translation.get("to") : "?"}
       </s.WordsHolder>
 
       <s.ButtonsHolder>
         {showingSolution ? (
           <>
-            <Button onClick={() => window.location.reload(false)}>Next</Button>
+            <Button onClick={handleNext}>Next</Button>
           </>
         ) : (
           <div style={{ align: "center" }}>
-            <Button
-              onClick={() => window.location.reload(false)}
-              variant="secondary"
-            >
+            <Button onClick={handleTooEasy} variant="secondary">
               Too Easy
             </Button>
             &nbsp;&nbsp;&nbsp;
