@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dansk_in_town/static/css/main.0a35ddef.chunk.css",
-    "main.js": "/dansk_in_town/static/js/main.7ffaf41b.chunk.js",
-    "main.js.map": "/dansk_in_town/static/js/main.7ffaf41b.chunk.js.map",
+    "main.js": "/dansk_in_town/static/js/main.839b22d4.chunk.js",
+    "main.js.map": "/dansk_in_town/static/js/main.839b22d4.chunk.js.map",
     "runtime-main.js": "/dansk_in_town/static/js/runtime-main.abfaffb6.js",
     "runtime-main.js.map": "/dansk_in_town/static/js/runtime-main.abfaffb6.js.map",
     "static/css/2.383c0125.chunk.css": "/dansk_in_town/static/css/2.383c0125.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.383c0125.chunk.css",
     "static/js/2.d04879de.chunk.js",
     "static/css/main.0a35ddef.chunk.css",
-    "static/js/main.7ffaf41b.chunk.js"
+    "static/js/main.839b22d4.chunk.js"
   ]
 }
