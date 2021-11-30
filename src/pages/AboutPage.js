@@ -4,21 +4,29 @@ export default function AboutPage() {
   return (
     <>
       <h2>
-        <br /> <br />
+        <br />
         Don't be like Homer Simpson ;)
       </h2>
 
       <img alt="simpsons" src={simpsonsImage} width="100%" />
       <br />
       <br />
-      <p>Understand the danish on the signs you see around you in town!</p>
       <p>
-        Upload pictures, get translations, and practice till you learn new
-        words!
+        Do you live in Denmark? Wouldn't it be nice if you would understand at
+        least the danish on the signs you see around town?
+      </p>
+      <p>
+        Practice Danish vocabulary based on photos taken around town. Either use
+        the public photo set that we created by walking everywhere around town,
+        or upload and practice with your own photos. Tip: When uploading your
+        own you get automatic translations too!
       </p>
 
       <br />
-      <br />
+
+      <a href="#/signup">
+        <h4>Become a Beta-tester</h4>
+      </a>
     </>
   );
 }
