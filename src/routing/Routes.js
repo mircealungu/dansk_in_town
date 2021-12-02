@@ -7,6 +7,7 @@ import { MyImages } from "../pages/MyImages";
 import AboutPage from "../pages/AboutPage";
 import RequireAuth from "./RequireAuth";
 import { Translation } from "../pages/Translation";
+import { Navigate } from "react-router";
 
 export default function MyRoutes() {
   return (
@@ -23,7 +24,7 @@ export default function MyRoutes() {
           <Route path="/myimages" element={<MyImages />} />
         </Route>
 
-        <Route path="/" element={<AboutPage />} />
+        <Route path="/" element={<Navigate to="/exercise" />} />
       </Routes>
     </>
   );
