@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/dansk_in_town/static/css/main.0a35ddef.chunk.css",
-    "main.js": "/dansk_in_town/static/js/main.b32cc40b.chunk.js",
-    "main.js.map": "/dansk_in_town/static/js/main.b32cc40b.chunk.js.map",
+    "main.js": "/dansk_in_town/static/js/main.07452e50.chunk.js",
+    "main.js.map": "/dansk_in_town/static/js/main.07452e50.chunk.js.map",
     "runtime-main.js": "/dansk_in_town/static/js/runtime-main.abfaffb6.js",
     "runtime-main.js.map": "/dansk_in_town/static/js/runtime-main.abfaffb6.js.map",
     "static/css/2.383c0125.chunk.css": "/dansk_in_town/static/css/2.383c0125.chunk.css",
-    "static/js/2.d04879de.chunk.js": "/dansk_in_town/static/js/2.d04879de.chunk.js",
-    "static/js/2.d04879de.chunk.js.map": "/dansk_in_town/static/js/2.d04879de.chunk.js.map",
+    "static/js/2.773d756a.chunk.js": "/dansk_in_town/static/js/2.773d756a.chunk.js",
+    "static/js/2.773d756a.chunk.js.map": "/dansk_in_town/static/js/2.773d756a.chunk.js.map",
     "static/js/3.997011e3.chunk.js": "/dansk_in_town/static/js/3.997011e3.chunk.js",
     "static/js/3.997011e3.chunk.js.map": "/dansk_in_town/static/js/3.997011e3.chunk.js.map",
     "index.html": "/dansk_in_town/index.html",
     "static/css/2.383c0125.chunk.css.map": "/dansk_in_town/static/css/2.383c0125.chunk.css.map",
     "static/css/main.0a35ddef.chunk.css.map": "/dansk_in_town/static/css/main.0a35ddef.chunk.css.map",
-    "static/js/2.d04879de.chunk.js.LICENSE.txt": "/dansk_in_town/static/js/2.d04879de.chunk.js.LICENSE.txt",
+    "static/js/2.773d756a.chunk.js.LICENSE.txt": "/dansk_in_town/static/js/2.773d756a.chunk.js.LICENSE.txt",
     "static/media/simpsons.small.ad336b70.png": "/dansk_in_town/static/media/simpsons.small.ad336b70.png"
   },
   "entrypoints": [
     "static/js/runtime-main.abfaffb6.js",
     "static/css/2.383c0125.chunk.css",
-    "static/js/2.d04879de.chunk.js",
+    "static/js/2.773d756a.chunk.js",
     "static/css/main.0a35ddef.chunk.css",
-    "static/js/main.b32cc40b.chunk.js"
+    "static/js/main.07452e50.chunk.js"
   ]
 }
