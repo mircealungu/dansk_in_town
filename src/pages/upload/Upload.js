@@ -66,10 +66,17 @@ export function Upload() {
       )}
 
       <Form>
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label>Select an image from your computer</Form.Label>
-          <Form.Control onChange={handleFileUpload} type="file" />
-        </Form.Group>
+        {!imageFile && (
+          <Form.Group controlId="formFile" className="mb-3">
+            <Form.Label>Select an image from your computer</Form.Label>
+            <Form.Control onChange={handleFileUpload} type="file" />
+          </Form.Group>
+        )}
+        {imageFile && (
+          <Button variant="link" onClick={() => setImageFile()}>
+            Select another image
+          </Button>
+        )}
 
         {translations.map((translation) => (
           <Translation
