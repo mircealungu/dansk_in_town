@@ -1,13 +1,8 @@
-import simpsonsImage from "../img/simpsons.png";
+import simpsonsImage from "../img/simpsons.small.png";
 
 export default function AboutPage() {
   return (
     <>
-      <h2>
-        <br />
-        Don't be like Homer Simpson ;)
-      </h2>
-
       <img alt="simpsons" src={simpsonsImage} width="100%" />
       <br />
       <br />
@@ -15,6 +10,7 @@ export default function AboutPage() {
         Do you live in Denmark? Wouldn't it be nice if you would understand at
         least the danish on the signs you see around town?
       </p>
+
       <p>
         Practice Danish vocabulary based on photos taken around town. Either use
         the public photo set that we created by walking everywhere around town,
