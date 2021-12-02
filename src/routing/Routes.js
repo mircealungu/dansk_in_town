@@ -6,6 +6,7 @@ import { Upload } from "../pages/upload/Upload";
 import { MyImages } from "../pages/MyImages";
 import AboutPage from "../pages/AboutPage";
 import RequireAuth from "./RequireAuth";
+import { Translation } from "../pages/Translation";
 
 export default function MyRoutes() {
   return (
@@ -17,6 +18,7 @@ export default function MyRoutes() {
 
         <Route element={<RequireAuth />}>
           <Route path="/exercise" element={<Exercises />} />
+          <Route path="/translation/:translationId" element={<Translation />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/myimages" element={<MyImages />} />
         </Route>

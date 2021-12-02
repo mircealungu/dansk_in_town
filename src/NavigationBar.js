@@ -36,11 +36,11 @@ export function NavigationBar() {
             {Parse.User.current() && (
               <>
                 <Nav.Link as={Link} to="/myimages">
-                  My Images
+                  My Words
                 </Nav.Link>
 
                 <Nav.Link as={Link} to="/exercise">
-                  Exercise
+                  Practice
                 </Nav.Link>
 
                 <Nav.Link onClick={handleSignOut} as={Link} to="/">

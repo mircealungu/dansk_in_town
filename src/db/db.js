@@ -4,10 +4,18 @@ async function getTranslations() {
   const Translation = Parse.Object.extend("Translation");
   const query = new Parse.Query(Translation);
   query.include("image");
-
   query.notContainedIn("too_easy", [User.current()]);
+  query.equalTo("user", Parse.User.current());
 
   return await query.find();
+}
+
+async function getTranslation(id) {
+  const Translation = Parse.Object.extend("Translation");
+  const query = new Parse.Query(Translation);
+  query.include("image");
+
+  return await query.get(id);
 }
 
 async function getTranslationsForExercises() {
@@ -58,4 +66,5 @@ export {
   uploadImageAndWords,
   tooEasy,
   getTranslationsForExercises,
+  getTranslation,
 };

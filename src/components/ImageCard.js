@@ -6,14 +6,14 @@ export default function ImageCard({ imageId, url, words }) {
       <br />
 
       <Card style={{ maxWidth: "320px" }}>
-        <Link to={"/edit/" + imageId}>
-          <Card.Img variant="top" src={url} />
-        </Link>
+        <Card.Img variant="top" src={url} />
+
         <ListGroup className="list-group-flush">
           {words.map((e) => (
             <ListGroupItem key={e.id}>
-              <b>{e.get("from")}</b>
-              {/* = {e.get("to")} */}
+              <Link to={"/translation/" + e.id}>
+                <b>{e.get("from")}</b>
+              </Link>
             </ListGroupItem>
           ))}
         </ListGroup>
