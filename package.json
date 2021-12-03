@@ -15,11 +15,17 @@
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.3",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploycloud": "cp -r src/cloud/* b4a_cloud/cloud && (cd b4a_cloud ; b4a deploy)",
+    "deployb4a--change-router": "sed -i '' 's/HashRouter/BrowserRouter/g' src/App.js && sed -i '' '5s/homepage/temp/' package.json",
+    "deployb4a--revert-router": "sed -i '' '5s/temp/homepage/' package.json && sed -i '' 's/BrowserRouter/HashRouter/g' src/App.js",
+    "deployb4a--build": "npm run build && cp -r build/* b4a_cloud/public && cp -r src/cloud/* b4a_cloud/cloud",
+    "deployb4a": "npm run -s deployb4a--change-router && npm run -s deployb4a--build && (cd b4a_cloud ; b4a deploy) && npm run -s deployb4a--revert-router",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
