@@ -18,6 +18,23 @@ async function getTranslation(id) {
   return await query.get(id);
 }
 
+async function getRandomTranslationBut(id) {
+  const Translation = Parse.Object.extend("Translation");
+  const query = new Parse.Query(Translation);
+  query.include("image");
+
+  let translations = await query.find();
+
+  let randomTranslation =
+    translations[Math.floor(Math.random() * translations.length)];
+  while (randomTranslation.id == id) {
+    randomTranslation =
+      translations[Math.floor(Math.random() * translations.length)];
+  }
+
+  return randomTranslation;
+}
+
 async function getTranslationsForExercises() {
   const Translation = Parse.Object.extend("Translation");
   const query = new Parse.Query(Translation);
@@ -67,4 +84,5 @@ export {
   tooEasy,
   getTranslationsForExercises,
   getTranslation,
+  getRandomTranslationBut,
 };

@@ -1,4 +1,5 @@
 import simpsonsImage from "../img/simpsons.small.png";
+import { Link } from "react-router-dom";
 
 export default function AboutPage() {
   return (
@@ -20,9 +21,9 @@ export default function AboutPage() {
 
       <br />
 
-      <a href="#/signup">
+      <Link to="/signup">
         <h4>Become a Beta-tester</h4>
-      </a>
+      </Link>
     </>
   );
 }
