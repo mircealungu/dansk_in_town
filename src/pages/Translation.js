@@ -3,13 +3,16 @@ import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import * as s from "./Excercises.sc";
 
-import { useParams } from "react-router";
-import { getTranslation } from "../db/db";
+import { useParams, useNavigate } from "react-router";
+import { getTranslation, getRandomTranslationBut } from "../db/db";
 
 import { Link } from "react-router-dom";
 
+import { User } from "parse";
+
 export function Translation() {
   let params = useParams();
+  const navigate = useNavigate();
   let translationId = params.translationId;
 
   const [translation, setTranslation] = useState();
@@ -21,9 +24,20 @@ export function Translation() {
     });
   }, []);
 
+  function handleAnotherWord() {
+    getRandomTranslationBut(translationId).then((trans) => {
+      console.log(trans);
+      setShowingSolution(false);
+      setTranslation(trans);
+      navigate(`/translation/${trans.id}`);
+    });
+  }
+
   if (!translation) {
     return <p></p>;
   }
+
+  console.log("rendering " + translation.id);
 
   return (
     <>
@@ -38,7 +52,7 @@ export function Translation() {
         {showingSolution ? translation.get("to") : "?"}
       </s.WordsHolder>
 
-      <s.ButtonsHolder>
+      <s.VerticalButtonsColumn>
         {!showingSolution ? (
           <div style={{ align: "center" }}>
             <Button
@@ -48,12 +62,22 @@ export function Translation() {
               Show Translation
             </Button>
           </div>
-        ) : (
+        ) : User.current() ? (
           <Link to="/myimages">
             <Button>Back to My Images</Button>
           </Link>
+        ) : (
+          <>
+            <div>
+              <Button onClick={handleAnotherWord}>Show me another word</Button>
+            </div>
+            <br />
+            <div>
+              <Link to="/about">Learn More</Link> about Dansk in Town.
+            </div>
+          </>
         )}
-      </s.ButtonsHolder>
+      </s.VerticalButtonsColumn>
     </>
   );
 }

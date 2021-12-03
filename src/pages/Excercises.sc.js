@@ -26,4 +26,17 @@ const ButtonsHolder = styled.div`
   margin-top: 2em;
 `;
 
-export { ImageHolder, Image, WordsHolder, ButtonsHolder };
+const VerticalButtonsColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+`;
+
+export {
+  ImageHolder,
+  Image,
+  WordsHolder,
+  ButtonsHolder,
+  VerticalButtonsColumn,
+};
