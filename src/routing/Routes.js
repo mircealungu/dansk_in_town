@@ -19,10 +19,12 @@ export default function MyRoutes() {
 
         <Route element={<RequireAuth />}>
           <Route path="/exercise" element={<Exercises />} />
-          <Route path="/translation/:translationId" element={<Translation />} />
+
           <Route path="/upload" element={<Upload />} />
           <Route path="/myimages" element={<MyImages />} />
         </Route>
+
+        <Route path="/translation/:translationId" element={<Translation />} />
 
         <Route path="/" element={<Navigate to="/exercise" />} />
       </Routes>

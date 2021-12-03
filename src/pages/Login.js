@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Parse from "parse";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Login(props) {
   const [username, setUsername] = useState();
@@ -32,7 +33,6 @@ export default function Login(props) {
             autoFocus
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
@@ -44,6 +44,9 @@ export default function Login(props) {
         <Button onClick={handleLoginAttempt} variant="primary" type="submit">
           Submit
         </Button>
+        <br />
+        <br />
+        Don't have an account? <Link to="/signup"> Create one!</Link>
       </Form>
     </>
   );
