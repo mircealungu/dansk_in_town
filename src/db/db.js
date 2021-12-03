@@ -27,7 +27,7 @@ async function getRandomTranslationBut(id) {
 
   let randomTranslation =
     translations[Math.floor(Math.random() * translations.length)];
-  while (randomTranslation.id == id) {
+  while (randomTranslation.id === id) {
     randomTranslation =
       translations[Math.floor(Math.random() * translations.length)];
   }

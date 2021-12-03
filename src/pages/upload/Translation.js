@@ -33,7 +33,7 @@ export default function Translation({
 
         <Form.Group className="mb-3" controlId="formBasicTranslation">
           <Form.Label>Translation</Form.Label>
-          <a href="#" onClick={automaticTranslation}>
+          <a href="." onClick={automaticTranslation}>
             (auto)
           </a>
           <Form.Control
