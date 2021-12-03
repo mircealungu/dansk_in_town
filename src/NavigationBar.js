@@ -13,9 +13,9 @@ export function NavigationBar() {
   }
 
   return (
-    <Navbar bg="light" expand="sm">
+    <Navbar bg="light">
       <Container>
-        <Navbar.Brand href="#/about" style={{ lineHeight: "1em" }}>
+        <Navbar.Brand as={Link} to="/about" style={{ lineHeight: "1em" }}>
           Dansk <br />
           in Town
         </Navbar.Brand>
