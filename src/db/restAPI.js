@@ -13,6 +13,8 @@ async function getTranslations() {
 }
 
 async function getSpecificTranslations(constraintString) {
+  // See: https://docs.parseplatform.org/rest/guide/#query-constraints
+
   let filterString =
     "?where=" + encodeURIComponent(JSON.stringify(constraintString));
 
@@ -30,7 +32,7 @@ async function getSpecificTranslations(constraintString) {
 }
 
 async function getTranslationsAfter1stOfDec() {
-  let after1stOfDecember = {
+  let query = {
     createdAt: {
       $gte: {
         __type: "Date",
@@ -39,17 +41,29 @@ async function getTranslationsAfter1stOfDec() {
     },
   };
 
-  return await getSpecificTranslations(after1stOfDecember);
+  return await getSpecificTranslations(query);
 }
 
 async function getTranslationOfWord(word) {
-  let translationOfWord = {
+  let query = {
     from: {
       $in: [word],
     },
   };
 
-  return await getSpecificTranslations(translationOfWord);
+  return await getSpecificTranslations(query);
+}
+
+async function getTranslationsOfUser(image_id) {
+  // https://docs.parseplatform.org/rest/guide/#relational-queries
+  let query = {
+    user: {
+      __type: "Pointer",
+      className: "_User",
+      objectId: image_id,
+    },
+  };
+  return await getSpecificTranslations(query);
 }
 
 async function createNewUser() {
@@ -86,4 +100,5 @@ export {
   createNewUser,
   getTranslationsAfter1stOfDec,
   getTranslationOfWord,
+  getTranslationsOfUser,
 };
