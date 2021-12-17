@@ -26,7 +26,8 @@
     "deployb4a--revert-router": "sed -i '' '5s/temp/homepage/' package.json && sed -i '' 's/BrowserRouter/HashRouter/g' src/App.js",
     "deployb4a--build": "npm run build && cp -r build/* b4a_cloud/public && cp -r src/cloud/* b4a_cloud/cloud",
     "deployb4a": "npm run -s deployb4a--change-router && npm run -s deployb4a--build && (cd b4a_cloud ; b4a deploy) && npm run -s deployb4a--revert-router",
-    "deploygh": "npm run build && gh-pages -d build",
+    "add-domain": "echo \"intown.dk\" > build/CNAME",
+    "deploygh": "npm run build && npm run -s add-domain && gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
