@@ -4,6 +4,7 @@ import { getTranslationsForExercises, tooEasy } from "../db/db";
 
 import { Button } from "react-bootstrap";
 import * as s from "./Excercises.sc";
+import LoadingMessage from "../components/LoadingMessage";
 
 export function Exercises() {
   const [translation, setTranslation] = useState();
@@ -37,7 +38,7 @@ export function Exercises() {
   }
 
   if (!translation) {
-    return <p></p>;
+    return <LoadingMessage />;
   }
 
   return (
