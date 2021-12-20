@@ -1,0 +1,4 @@
+2021-12-9
+solving the issue with the custom domain being always reset on deploy from the new machine
+https://github.com/tschaub/gh-pages/issues/213
+
