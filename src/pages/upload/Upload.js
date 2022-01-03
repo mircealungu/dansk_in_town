@@ -14,10 +14,12 @@ export function Upload() {
     { id: generateUID(), to: "", from: "" },
   ]);
   const [imageFile, setImageFile] = useState();
+  const [isUploading, setIsUploading] = useState(false);
   const navigate = useNavigate();
 
   async function handleUpload(e) {
     e.preventDefault();
+    setIsUploading(true);
 
     await uploadImageAndWords(imageFile, translations);
 
@@ -53,6 +55,10 @@ export function Upload() {
 
   function deleteTranslation(translation) {
     setTranslations(translations.filter((t) => t.id !== translation.id));
+  }
+
+  if (isUploading) {
+    return "Uploading...";
   }
 
   return (
