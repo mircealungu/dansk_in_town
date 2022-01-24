@@ -22,7 +22,8 @@ export function Translation() {
     getTranslation(translationId).then((trans) => {
       setTranslation(trans);
     });
-  }, []);
+
+  }, [translationId]);
 
   function handleAnotherWord() {
     getRandomTranslationBut(translationId).then((trans) => {
