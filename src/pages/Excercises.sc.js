@@ -16,7 +16,7 @@ const Image = styled.img`
 const WordsHolder = styled.div`
   display: flex;
   justify-content: center;
-  font-size: xx-large;
+  font-size: large;
   margin-top: 0.2em;
 `;
 
